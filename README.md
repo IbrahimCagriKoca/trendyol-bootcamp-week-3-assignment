@@ -1,3 +1,9 @@
+# Single Page Rick and Morty Application
+
+A single page application for Rick and Morty Characters
+
+![](rick.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

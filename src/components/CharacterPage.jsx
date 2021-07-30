@@ -8,7 +8,8 @@ const backToHome = () => {
     history.push("/")
 }
 
-    let {id} = useParams();
+const {id} = useParams();
+const apiUrl = "https://rickandmortyapi.com/api/character/" + id;
 const fetchCharacter = (callback, url) => {
     fetch(url)
         .then((response) => response.json())
@@ -19,15 +20,14 @@ const fetchCharacter = (callback, url) => {
         }); 
   }
 
-  const [apiUrl, setApiUrl] = useState("https://rickandmortyapi.com/api/character/" + id);  
   const [character, setCharacter] = useState({});
   const [episodes, setEpisodes] = useState([]);
   
-    useEffect(() => {
-        fetchCharacter((character) => {
-            setCharacter(character);
-        }, apiUrl)
-    }, [apiUrl]);
+  useEffect(() => {
+    fetchCharacter((character) => {
+        setCharacter(character);
+    }, apiUrl)
+}, []);
 
     useEffect (() => {
         if (character.episode) {
